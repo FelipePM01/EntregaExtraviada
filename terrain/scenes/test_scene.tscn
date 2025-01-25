@@ -1,30 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://karghfqdfhx8"]
+[gd_scene load_steps=5 format=3 uid="uid://karghfqdfhx8"]
 
 [ext_resource type="Script" path="res://terrain/scripts/test_scene.gd" id="1_eit7c"]
 [ext_resource type="PackedScene" uid="uid://ba2toixanr5ol" path="res://terrain/scenes/terrain.tscn" id="1_slncn"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_s5uag"]
-bounce = 0.6
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kxwjm"]
-size = Vector2(50, 50)
-
-[sub_resource type="BoxMesh" id="BoxMesh_qosoj"]
-size = Vector3(50, 50, 10)
+[ext_resource type="PackedScene" uid="uid://ofk54kht2sup" path="res://paralax/scenes/cliff.tscn" id="2_0fdb2"]
+[ext_resource type="PackedScene" uid="uid://dt6cak775tec0" path="res://box/scenes/box.tscn" id="4_iuflt"]
 
 [node name="TestScene" type="Node2D" node_paths=PackedStringArray("player", "terrain")]
 script = ExtResource("1_eit7c")
-player = NodePath("RigidBody2D")
+player = NodePath("Box")
 terrain = NodePath("Terrain")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
-position = Vector2(300, 0)
-physics_material_override = SubResource("PhysicsMaterial_s5uag")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-shape = SubResource("RectangleShape2D_kxwjm")
-
-[node name="MeshInstance2D" type="MeshInstance2D" parent="RigidBody2D"]
-mesh = SubResource("BoxMesh_qosoj")
+[node name="Cliff" parent="." instance=ExtResource("2_0fdb2")]
 
 [node name="Terrain" parent="." instance=ExtResource("1_slncn")]
+
+[node name="Box" parent="." instance=ExtResource("4_iuflt")]
+position = Vector2(576, 181)
