@@ -27,7 +27,7 @@ position = Vector2(736.059, 540)
 gravity_scale = 0.0
 
 [node name="Terrain" parent="." instance=ExtResource("4_y10el")]
-position = Vector2(830, 475)
+position = Vector2(830, 616)
 
 [node name="Street" parent="." instance=ExtResource("6_3o4fa")]
 position = Vector2(830.059, 127)

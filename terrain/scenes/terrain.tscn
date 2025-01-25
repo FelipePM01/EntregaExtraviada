@@ -18,12 +18,9 @@ script = ExtResource("1_e8ila")
 ground_collision = NodePath("GroundCollision")
 texture = ExtResource("2_0wtrj")
 noise = SubResource("NoiseTexture2D_ppkbl")
-bezier_x_in_out = 50
-bezier_max_y_in_out = 50
 
 [node name="GroundCollision" type="StaticBody2D" parent="."]
 collision_layer = 3
 physics_material_override = SubResource("PhysicsMaterial_jvued")
 
 [node name="Line2D" type="Line2D" parent="."]
-visible = false

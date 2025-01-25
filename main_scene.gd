@@ -9,7 +9,7 @@ func _ready() -> void:
 	Globals.lose.connect(lose)
 
 func _process(delta):
-	if terrain.spawn_polygon_x-Globals.screensize.x < player.position.x :
+	if terrain.start_x - Globals.screensize.x < player.position.x :
 		terrain.add_hills()
 		
 	if (Input.is_action_pressed("Spacebar") and menu.visible and not Globals.is_lose):
