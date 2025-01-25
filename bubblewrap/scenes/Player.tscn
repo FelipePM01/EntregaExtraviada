@@ -1,12 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://c58r0fu4swxyb"]
+[gd_scene load_steps=5 format=3 uid="uid://c58r0fu4swxyb"]
 
-[ext_resource type="Texture2D" uid="uid://cx1awdbije0ns" path="res://bubblewrap/textures/Cardboard.png" id="1_flx04"]
-[ext_resource type="PackedScene" uid="uid://7ncsp1ltewid" path="res://bubblewrap/scenes/SingleBubble.tscn" id="2_34xx1"]
+[ext_resource type="Script" path="res://bubblewrap/scenes/rotate_player.gd" id="1_d8mat"]
+[ext_resource type="Texture2D" uid="uid://c2e56w6jrqpoj" path="res://bubblewrap/textures/Cardboard.png" id="1_flx04"]
+[ext_resource type="PackedScene" uid="uid://7ncsp1ltewid" path="res://bubblewrap/scenes/single_bubble.tscn" id="2_34xx1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oiaga"]
 size = Vector2(1024, 1028)
 
 [node name="Player" type="RigidBody2D"]
+script = ExtResource("1_d8mat")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 0)
