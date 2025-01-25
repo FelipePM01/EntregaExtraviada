@@ -18,7 +18,7 @@ const offset=200
 func _ready():
 	randomize()
 	terrain = Array()
-	var start_y = Globals.screensize.y * 3/4
+	var start_y = 0
 	terrain.append(Vector2(1, start_y))
 	add_hills()
 	add_hills()
@@ -50,6 +50,7 @@ func add_hills():
 	var ground = Polygon2D.new()
 	ground.polygon = poly
 	ground.texture = texture
+	ground.texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
 	add_child(ground)
 	
 	start_height=end_vertex.y

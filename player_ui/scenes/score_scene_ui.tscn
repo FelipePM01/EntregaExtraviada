@@ -2,19 +2,11 @@
 
 [ext_resource type="Script" path="res://player_ui/scripts/score_scene_ui.gd" id="1_loimw"]
 
-[node name="ScoreUi" type="Control" node_paths=PackedStringArray("score_text")]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="ScoreUi" type="CanvasLayer" node_paths=PackedStringArray("score_text")]
 script = ExtResource("1_loimw")
-score_text = NodePath("CanvasLayer/ScoreText")
+score_text = NodePath("ScoreText")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="ScoreText" type="Label" parent="CanvasLayer"]
+[node name="ScoreText" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -27,3 +19,9 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 31
 text = "Score: 0"
 horizontal_alignment = 1
+
+[node name="Fps" type="Label" parent="."]
+offset_right = 201.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 57
+text = "13"
