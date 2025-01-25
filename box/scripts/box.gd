@@ -20,3 +20,4 @@ func _process(delta: float) -> void:
 		apply_torque_impulse(-TORQUE*delta)
 	elif Input.is_action_pressed("right"):
 		apply_torque_impulse(TORQUE*delta)
+	Globals.score = position.x / 100

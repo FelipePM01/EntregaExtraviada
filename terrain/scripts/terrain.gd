@@ -14,7 +14,7 @@ func _ready():
 	randomize()
 	terrain = Array()
 	var start_y = Globals.screensize.y * 3/4
-	terrain.append(Vector2(0, start_y))
+	terrain.append(Vector2(1, start_y))
 	add_hills()
 	
 func get_point(x:float, height):

@@ -1,5 +1,6 @@
 extends Control
 
+@export var score_text: Label
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -8,5 +9,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	score_text.text = "Highscore:\n{}m".format([Globals.score], "{}")
 	if (Input.is_action_pressed("Spacebar") and visible):
-		get_tree().reload_current_scene()
+		_on_restart_button_pressed()
+
+
+func _on_restart_button_pressed() -> void:
+	get_tree().reload_current_scene()
+	visible = false

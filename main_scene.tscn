@@ -1,11 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci5ill1frv0tg"]
+[gd_scene load_steps=6 format=3 uid="uid://6xssreta51vp"]
 
 [ext_resource type="Script" path="res://main_scene.gd" id="1_8bsnl"]
 [ext_resource type="PackedScene" uid="uid://dt6cak775tec0" path="res://box/scenes/box.tscn" id="2_uv8jf"]
+[ext_resource type="PackedScene" uid="uid://ofk54kht2sup" path="res://paralax/scenes/cliff.tscn" id="3_v2q77"]
+[ext_resource type="PackedScene" uid="uid://ba2toixanr5ol" path="res://terrain/scenes/terrain.tscn" id="4_y10el"]
+[ext_resource type="PackedScene" uid="uid://cchxpjumv38tg" path="res://player_ui/scenes/score_scene_ui.tscn" id="5_5ya65"]
 
-[node name="MainScene" type="Node2D"]
+[node name="MainScene" type="Node2D" node_paths=PackedStringArray("player", "terrain")]
 script = ExtResource("1_8bsnl")
+player = NodePath("Box")
+terrain = NodePath("Terrain")
+
+[node name="Cliff" parent="." instance=ExtResource("3_v2q77")]
+
+[node name="Terrain" parent="." instance=ExtResource("4_y10el")]
+hill_sharpness = 10
 
 [node name="Box" parent="." instance=ExtResource("2_uv8jf")]
 position = Vector2(112, 119)
-inertia = 0.1
+
+[node name="ScoreUi" parent="." instance=ExtResource("5_5ya65")]

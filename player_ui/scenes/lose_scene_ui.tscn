@@ -1,0 +1,95 @@
+[gd_scene load_steps=8 format=3 uid="uid://bshkt4wfgo8kn"]
+
+[ext_resource type="Script" path="res://player_ui/scripts/lost_scene_ui.gd" id="1_n51eg"]
+[ext_resource type="Theme" uid="uid://cao5scx3g0f1n" path="res://utils/themes/main_theme.tres" id="2_oh4tf"]
+[ext_resource type="Texture2D" uid="uid://c5qd6pbrk86pr" path="res://utils/themes/letter.png" id="3_yi5ep"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k2sju"]
+texture = ExtResource("3_yi5ep")
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="Gradient" id="Gradient_lyp8q"]
+colors = PackedColorArray(0, 0, 0, 0.392157, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_pip6b"]
+gradient = SubResource("Gradient_lyp8q")
+fill_from = Vector2(1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xvn3h"]
+texture = SubResource("GradientTexture2D_pip6b")
+
+[node name="LoseScene" type="Control" node_paths=PackedStringArray("score_text")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n51eg")
+score_text = NodePath("CanvasLayer/Panel/VBoxContainer/MarginContainer/HighscoreText")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="PanelContainer" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -173.0
+offset_top = -217.0
+offset_right = 185.0
+offset_bottom = 228.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_oh4tf")
+theme_override_styles/panel = SubResource("StyleBoxTexture_k2sju")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Panel"]
+layout_mode = 2
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 30
+
+[node name="HighscoreText" type="Label" parent="CanvasLayer/Panel/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 26
+text = "Highscore: 
+0m"
+horizontal_alignment = 1
+
+[node name="GameOverText" type="Label" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 21
+text = "The carrier is NOT 
+responsible for 
+possible damages
+upon delivery"
+horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 35
+theme_override_constants/margin_bottom = 0
+
+[node name="RestartButton" type="Button" parent="CanvasLayer/Panel/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_font_sizes/font_size = 26
+text = "Press space to restart"
+
+[node name="Panel2" type="Panel" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_xvn3h")
+
+[connection signal="pressed" from="CanvasLayer/Panel/VBoxContainer/MarginContainer2/RestartButton" to="." method="_on_restart_button_pressed"]
