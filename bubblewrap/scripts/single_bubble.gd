@@ -1,4 +1,11 @@
 extends Node2D
+class_name SingleBubble
+
+signal bubble_popped(SingleBubble)
+
+@onready var cooldownTimer: Timer = $CooldownTimer
+var isCooldown = false
+
 @export var playerRigidbody : RigidBody2D
 const forceToPop: float = 700
 
@@ -21,6 +28,8 @@ func _physics_process(delta: float) -> void:
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	IsColliding = true
+	if (isCooldown):
+		return
 	if (lastVelocity.length() < forceToPop):
 		return
 	if (!hasPopped):
@@ -28,15 +37,26 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	timesCollided += 1
 	if (timesCollided > 1 and timesCollided < 3):
 		#Display Player Lost screen and score
-		print_debug("Player Lost")
+		get_tree().reload_current_scene()
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	IsColliding = false
 
-func pop_bubble() -> void:
+func pop_bubble():
+	
 	hasPopped = true
 	var randomTime = randi_range(0,0.005)
 	await get_tree().create_timer(randomTime).timeout
 	$AudioStreamPlayer2D.play()
+	$Line2D.visible = true
 	$Sprite2D.visible = false
+	emit_signal("bubble_popped",self)
+	start_cooldown()
+
+func start_cooldown():
+	isCooldown = true
+	cooldownTimer.start()
+
+func _on_cooldown_timer_timeout():
+	isCooldown = false

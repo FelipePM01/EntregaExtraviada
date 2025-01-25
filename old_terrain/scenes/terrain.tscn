@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://ba2toixanr5ol"]
+
+[ext_resource type="Script" path="res://terrain/scripts/terrain.gd" id="1_e8ila"]
+[ext_resource type="Texture2D" uid="uid://ddvvquy2sebku" path="res://terrain/resources/grass.png" id="2_0wtrj"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_0h82p"]
+noise_type = 4
+frequency = 0.088
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_ppkbl"]
+seamless = true
+noise = SubResource("FastNoiseLite_0h82p")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_jvued"]
+
+[node name="Terrain" type="Node2D" node_paths=PackedStringArray("ground_collision")]
+script = ExtResource("1_e8ila")
+ground_collision = NodePath("GroundCollision")
+texture = ExtResource("2_0wtrj")
+noise = SubResource("NoiseTexture2D_ppkbl")
+
+[node name="GroundCollision" type="StaticBody2D" parent="."]
+collision_layer = 3
+physics_material_override = SubResource("PhysicsMaterial_jvued")
+
+[node name="Line2D" type="Line2D" parent="."]
