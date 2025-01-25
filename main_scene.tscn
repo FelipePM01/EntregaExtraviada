@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://6xssreta51vp"]
+[gd_scene load_steps=7 format=3 uid="uid://6xssreta51vp"]
 
 [ext_resource type="Script" path="res://main_scene.gd" id="1_8bsnl"]
 [ext_resource type="PackedScene" uid="uid://dt6cak775tec0" path="res://box/scenes/box.tscn" id="2_uv8jf"]
 [ext_resource type="PackedScene" uid="uid://ofk54kht2sup" path="res://paralax/scenes/cliff.tscn" id="3_v2q77"]
 [ext_resource type="PackedScene" uid="uid://ba2toixanr5ol" path="res://terrain/scenes/terrain.tscn" id="4_y10el"]
 [ext_resource type="PackedScene" uid="uid://cchxpjumv38tg" path="res://player_ui/scenes/score_scene_ui.tscn" id="5_5ya65"]
+[ext_resource type="PackedScene" uid="uid://bshkt4wfgo8kn" path="res://player_ui/scenes/lose_scene_ui.tscn" id="6_8y5pi"]
 
 [node name="MainScene" type="Node2D" node_paths=PackedStringArray("player", "terrain")]
 script = ExtResource("1_8bsnl")
@@ -20,3 +21,5 @@ hill_sharpness = 10
 position = Vector2(112, 119)
 
 [node name="ScoreUi" parent="." instance=ExtResource("5_5ya65")]
+
+[node name="LoseScene" parent="." instance=ExtResource("6_8y5pi")]

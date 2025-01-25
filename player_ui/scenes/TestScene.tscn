@@ -12,6 +12,5 @@ offset_top = -316.0
 offset_bottom = -316.0
 
 [node name="LostScene" parent="Camera2D" instance=ExtResource("1_6af0k")]
-visible = false
 
 [node name="Node2D" type="Node2D" parent="."]
