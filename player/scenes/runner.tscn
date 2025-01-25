@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cgut2sfp3g8m8"]
+
+[ext_resource type="Script" path="res://player/scripts/Runner.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://huqwtkm7mxw4" path="res://icon.svg" id="2"]
+
+[sub_resource type="CircleShape2D" id="1"]
+radius = 31.2031
+
+[node name="Runner" type="CharacterBody2D" node_paths=PackedStringArray("camera")]
+script = ExtResource("1")
+speed = 800
+camera = NodePath("Camera2D")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+scale = Vector2(0.484375, 0.484375)
+texture = ExtResource("2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+limit_left = 0
+limit_smoothed = true
