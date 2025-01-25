@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c58r0fu4swxyb"]
 
 [ext_resource type="Texture2D" uid="uid://cx1awdbije0ns" path="res://bubblewrap/textures/Cardboard.png" id="1_flx04"]
-[ext_resource type="PackedScene" path="res://bubblewrap/scenes/SingleBubble.tscn" id="2_34xx1"]
+[ext_resource type="PackedScene" uid="uid://7ncsp1ltewid" path="res://bubblewrap/scenes/SingleBubble.tscn" id="2_34xx1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oiaga"]
 size = Vector2(1024, 1028)
@@ -10,222 +10,298 @@ size = Vector2(1024, 1028)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(2, 0)
+scale = Vector2(0.2, 0.2)
 shape = SubResource("RectangleShape2D_oiaga")
 
 [node name="BubblesTop" type="Node2D" parent="."]
+scale = Vector2(0.2, 0.2)
 
-[node name="SingleBubble" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble" parent="BubblesTop" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-484, -511)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble2" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble2" parent="BubblesTop" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-425, -510)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble3" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble3" parent="BubblesTop" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-365, -509)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble4" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble4" parent="BubblesTop" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-305, -508)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble5" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble5" parent="BubblesTop" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-246, -509)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble6" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble6" parent="BubblesTop" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-183, -508)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble7" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble7" parent="BubblesTop" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-123, -507)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble8" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble8" parent="BubblesTop" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-63, -506)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble9" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble9" parent="BubblesTop" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-1, -511)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble10" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble10" parent="BubblesTop" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(62, -510)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble11" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble11" parent="BubblesTop" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(122, -509)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble12" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble12" parent="BubblesTop" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(182, -508)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble13" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble13" parent="BubblesTop" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(241, -509)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble14" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble14" parent="BubblesTop" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(304, -508)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble15" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble15" parent="BubblesTop" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(364, -507)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble16" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble16" parent="BubblesTop" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(424, -506)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble17" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble17" parent="BubblesTop" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(482, -506)
+playerRigidbody = NodePath("../..")
 
 [node name="BubblesBottom" type="Node2D" parent="."]
+scale = Vector2(0.2, 0.2)
 
-[node name="SingleBubble" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble" parent="BubblesBottom" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-483, 506)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble2" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble2" parent="BubblesBottom" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-420, 507)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble3" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble3" parent="BubblesBottom" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-360, 508)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble4" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble4" parent="BubblesBottom" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-300, 509)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble5" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble5" parent="BubblesBottom" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-241, 508)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble6" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble6" parent="BubblesBottom" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-178, 509)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble7" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble7" parent="BubblesBottom" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-118, 510)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble8" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble8" parent="BubblesBottom" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-58, 511)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble9" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble9" parent="BubblesBottom" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(4, 506)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble10" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble10" parent="BubblesBottom" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(67, 507)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble11" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble11" parent="BubblesBottom" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(127, 508)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble12" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble12" parent="BubblesBottom" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(187, 509)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble13" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble13" parent="BubblesBottom" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(246, 508)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble14" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble14" parent="BubblesBottom" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(309, 509)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble15" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble15" parent="BubblesBottom" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(369, 510)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble16" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble16" parent="BubblesBottom" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(429, 511)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble17" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble17" parent="BubblesBottom" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(487, 511)
+playerRigidbody = NodePath("../..")
 
 [node name="BubblesRight" type="Node2D" parent="."]
 rotation = -1.57079
+scale = Vector2(0.2, 0.2)
 
-[node name="SingleBubble" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble" parent="BubblesRight" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-483, 506)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble2" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble2" parent="BubblesRight" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-420, 507)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble3" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble3" parent="BubblesRight" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-360, 508)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble4" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble4" parent="BubblesRight" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-300, 509)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble5" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble5" parent="BubblesRight" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-241, 508)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble6" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble6" parent="BubblesRight" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-178, 509)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble7" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble7" parent="BubblesRight" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-118, 510)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble8" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble8" parent="BubblesRight" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-58, 511)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble9" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble9" parent="BubblesRight" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(4, 506)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble10" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble10" parent="BubblesRight" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(67, 507)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble11" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble11" parent="BubblesRight" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(127, 508)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble12" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble12" parent="BubblesRight" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(187, 509)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble13" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble13" parent="BubblesRight" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(246, 508)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble14" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble14" parent="BubblesRight" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(309, 509)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble15" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble15" parent="BubblesRight" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(369, 510)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble16" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble16" parent="BubblesRight" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(429, 511)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble17" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble17" parent="BubblesRight" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(487, 511)
+playerRigidbody = NodePath("../..")
 
 [node name="BubblesLeft" type="Node2D" parent="."]
 rotation = 1.57079
+scale = Vector2(0.2, 0.2)
 
-[node name="SingleBubble" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble" parent="BubblesLeft" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-483, 506)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble2" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble2" parent="BubblesLeft" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-420, 507)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble3" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble3" parent="BubblesLeft" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-360, 508)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble4" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble4" parent="BubblesLeft" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-300, 509)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble5" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble5" parent="BubblesLeft" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-241, 508)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble6" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble6" parent="BubblesLeft" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-178, 509)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble7" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble7" parent="BubblesLeft" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-118, 510)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble8" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble8" parent="BubblesLeft" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(-58, 511)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble9" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble9" parent="BubblesLeft" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(4, 506)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble10" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble10" parent="BubblesLeft" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(67, 507)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble11" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble11" parent="BubblesLeft" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(127, 508)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble12" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble12" parent="BubblesLeft" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(187, 509)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble13" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble13" parent="BubblesLeft" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(246, 508)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble14" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble14" parent="BubblesLeft" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(309, 509)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble15" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble15" parent="BubblesLeft" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(369, 510)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble16" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble16" parent="BubblesLeft" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(429, 511)
+playerRigidbody = NodePath("../..")
 
-[node name="SingleBubble17" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+[node name="SingleBubble17" parent="BubblesLeft" node_paths=PackedStringArray("playerRigidbody") instance=ExtResource("2_34xx1")]
 position = Vector2(487, 511)
+playerRigidbody = NodePath("../..")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 rotation = 0.00095429
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_flx04")
+
+[node name="Camera2D" type="Camera2D" parent="."]

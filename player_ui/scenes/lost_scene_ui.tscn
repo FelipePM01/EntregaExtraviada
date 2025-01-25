@@ -1,0 +1,86 @@
+[gd_scene load_steps=4 format=3 uid="uid://bshkt4wfgo8kn"]
+
+[ext_resource type="Script" path="res://player_ui/scripts/lost_scene_ui.gd" id="1_n51eg"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_gde37"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_mrtm4"]
+font_size = 32
+
+[node name="LostScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_n51eg")
+
+[node name="GameOverText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -173.0
+offset_top = -193.0
+offset_right = 174.0
+offset_bottom = -105.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Game Over"
+label_settings = SubResource("LabelSettings_gde37")
+horizontal_alignment = 1
+
+[node name="HighscoreText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -411.0
+offset_top = -98.0
+offset_right = -64.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Highscore:"
+label_settings = SubResource("LabelSettings_mrtm4")
+horizontal_alignment = 1
+
+[node name="HighscoreValueText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -173.0
+offset_top = -98.0
+offset_right = 174.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "9999999m"
+label_settings = SubResource("LabelSettings_mrtm4")
+horizontal_alignment = 1
+
+[node name="RestartText" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -173.0
+offset_top = -24.0
+offset_right = 174.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Press space to restart"
+label_settings = SubResource("LabelSettings_mrtm4")
+horizontal_alignment = 1

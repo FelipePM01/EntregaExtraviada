@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ibksltjsir2p"]
+
+[ext_resource type="PackedScene" uid="uid://bshkt4wfgo8kn" path="res://player_ui/scenes/lost_scene_ui.tscn" id="1_6af0k"]
+[ext_resource type="PackedScene" uid="uid://cchxpjumv38tg" path="res://player_ui/scenes/score_scene_ui.tscn" id="2_4u1cy"]
+
+[node name="TestScene" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="ScoreUi" parent="Camera2D" node_paths=PackedStringArray("playerTransform") instance=ExtResource("2_4u1cy")]
+offset_top = -316.0
+offset_bottom = -316.0
+playerTransform = NodePath("../../Node2D")
+
+[node name="LostScene" parent="Camera2D" instance=ExtResource("1_6af0k")]
+visible = false
+
+[node name="Node2D" type="Node2D" parent="."]
