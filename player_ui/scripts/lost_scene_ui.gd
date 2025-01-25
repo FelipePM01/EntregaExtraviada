@@ -16,5 +16,5 @@ func _process(delta: float) -> void:
 
 func _on_restart_button_pressed() -> void:
 	get_tree().reload_current_scene()
-	visible = false
 	Globals.is_lose = false
+	visible = false

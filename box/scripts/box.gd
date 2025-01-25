@@ -21,4 +21,10 @@ func _process(delta: float) -> void:
 			apply_torque_impulse(-TORQUE*delta)
 		elif Input.is_action_pressed("right"):
 			apply_torque_impulse(TORQUE*delta)
+		if (linear_velocity.length() >= SingleBubble.forceToPop/2):
+			$VignetteEffect.expand_vignette(0.5)
+		else:
+			$VignetteEffect.shrink_vignette(0.2)
 		Globals.score = position.x / 100
+	else:
+		$VignetteEffect.clear_vignette()

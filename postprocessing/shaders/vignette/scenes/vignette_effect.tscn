@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://ieetl00chlny"]
+
+[ext_resource type="Shader" path="res://postprocessing/shaders/vignette/shader_scripts/vignette_effect.gdshader" id="1_di7f5"]
+[ext_resource type="Script" path="res://postprocessing/shaders/vignette/scripts/vignette_effect.gd" id="1_gfr12"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4idal"]
+resource_local_to_scene = true
+shader = ExtResource("1_di7f5")
+shader_parameter/vignette_size = 0.777
+shader_parameter/intensity = 1.0
+shader_parameter/softness = 0.0
+shader_parameter/vignette_color = Color(1, 1, 1, 0.529412)
+
+[node name="VignetteEffect" type="CanvasLayer"]
+script = ExtResource("1_gfr12")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_4idal")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.898039, 0.0901961, 0.0901961, 0)

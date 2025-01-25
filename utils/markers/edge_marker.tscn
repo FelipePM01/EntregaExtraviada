@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://snmd5f7hhbv1"]
 
-[ext_resource type="Texture2D" uid="uid://huqwtkm7mxw4" path="res://icon.svg" id="1_cqnst"]
+[ext_resource type="Texture2D" uid="uid://be0eu62v6ap0o" path="res://terrain/resources/little_tree.png" id="1_ydkv4"]
 
 [node name="PointMarker" type="Sprite2D"]
 visibility_layer = 2
 position = Vector2(-5.96046e-08, -5.96046e-08)
-scale = Vector2(0.140625, 0.140625)
-texture = ExtResource("1_cqnst")
+scale = Vector2(0.076, 0.076)
+texture = ExtResource("1_ydkv4")
