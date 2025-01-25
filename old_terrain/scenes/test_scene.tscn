@@ -1,0 +1,27 @@
+[gd_scene load_steps=4 format=3 uid="uid://karghfqdfhx8"]
+
+[ext_resource type="Script" path="res://terrain/scripts/test_scene.gd" id="1_eit7c"]
+[ext_resource type="PackedScene" uid="uid://ba2toixanr5ol" path="res://terrain/scenes/terrain.tscn" id="1_slncn"]
+[ext_resource type="PackedScene" uid="uid://dt6cak775tec0" path="res://box/scenes/box.tscn" id="4_iuflt"]
+
+[node name="TestScene" type="Node2D" node_paths=PackedStringArray("player", "terrain")]
+script = ExtResource("1_eit7c")
+player = NodePath("Box")
+terrain = NodePath("Terrain")
+
+[node name="Cliff" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+script = null
+
+[node name="Terrain" parent="." instance=ExtResource("1_slncn")]
+
+[node name="Box" parent="." instance=ExtResource("4_iuflt")]
+position = Vector2(576, 181)
