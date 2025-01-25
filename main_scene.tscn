@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://6xssreta51vp"]
+[gd_scene load_steps=11 format=3 uid="uid://6xssreta51vp"]
 
 [ext_resource type="Script" path="res://main_scene.gd" id="1_8bsnl"]
 [ext_resource type="PackedScene" uid="uid://dt6cak775tec0" path="res://box/scenes/box.tscn" id="2_uv8jf"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://c1s0thdvyahtt" path="res://terrain/scenes/street.tscn" id="6_3o4fa"]
 [ext_resource type="PackedScene" uid="uid://bshkt4wfgo8kn" path="res://player_ui/scenes/lose_scene_ui.tscn" id="6_8y5pi"]
 [ext_resource type="Texture2D" uid="uid://rpoykyouhg2x" path="res://game_menu/textures/Truck.png" id="6_mxdbv"]
+[ext_resource type="AudioStream" uid="uid://be1feu4pclbxd" path="res://game_menu/audio/Bang.mp3" id="8_0xbmu"]
 
 [node name="MainScene" type="Node2D" node_paths=PackedStringArray("player", "terrain", "menu", "lose_scene", "score_ui")]
 script = ExtResource("1_8bsnl")
@@ -37,6 +38,10 @@ position = Vector2(608, 540)
 scale = Vector2(0.341, 0.341)
 texture = ExtResource("6_mxdbv")
 flip_h = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Truck"]
+stream = ExtResource("8_0xbmu")
+volume_db = 10.111
 
 [node name="LoseScene" parent="." instance=ExtResource("6_8y5pi")]
 visible = false
