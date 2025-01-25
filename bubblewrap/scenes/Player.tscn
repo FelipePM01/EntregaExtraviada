@@ -1,0 +1,231 @@
+[gd_scene load_steps=4 format=3 uid="uid://c58r0fu4swxyb"]
+
+[ext_resource type="Texture2D" uid="uid://cx1awdbije0ns" path="res://bubblewrap/textures/Cardboard.png" id="1_flx04"]
+[ext_resource type="PackedScene" path="res://bubblewrap/scenes/SingleBubble.tscn" id="2_34xx1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oiaga"]
+size = Vector2(1024, 1028)
+
+[node name="Player" type="RigidBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_oiaga")
+
+[node name="BubblesTop" type="Node2D" parent="."]
+
+[node name="SingleBubble" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+position = Vector2(-484, -511)
+
+[node name="SingleBubble2" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+position = Vector2(-425, -510)
+
+[node name="SingleBubble3" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+position = Vector2(-365, -509)
+
+[node name="SingleBubble4" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+position = Vector2(-305, -508)
+
+[node name="SingleBubble5" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+position = Vector2(-246, -509)
+
+[node name="SingleBubble6" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+position = Vector2(-183, -508)
+
+[node name="SingleBubble7" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+position = Vector2(-123, -507)
+
+[node name="SingleBubble8" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+position = Vector2(-63, -506)
+
+[node name="SingleBubble9" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+position = Vector2(-1, -511)
+
+[node name="SingleBubble10" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+position = Vector2(62, -510)
+
+[node name="SingleBubble11" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+position = Vector2(122, -509)
+
+[node name="SingleBubble12" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+position = Vector2(182, -508)
+
+[node name="SingleBubble13" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+position = Vector2(241, -509)
+
+[node name="SingleBubble14" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+position = Vector2(304, -508)
+
+[node name="SingleBubble15" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+position = Vector2(364, -507)
+
+[node name="SingleBubble16" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+position = Vector2(424, -506)
+
+[node name="SingleBubble17" parent="BubblesTop" instance=ExtResource("2_34xx1")]
+position = Vector2(482, -506)
+
+[node name="BubblesBottom" type="Node2D" parent="."]
+
+[node name="SingleBubble" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+position = Vector2(-483, 506)
+
+[node name="SingleBubble2" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+position = Vector2(-420, 507)
+
+[node name="SingleBubble3" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+position = Vector2(-360, 508)
+
+[node name="SingleBubble4" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+position = Vector2(-300, 509)
+
+[node name="SingleBubble5" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+position = Vector2(-241, 508)
+
+[node name="SingleBubble6" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+position = Vector2(-178, 509)
+
+[node name="SingleBubble7" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+position = Vector2(-118, 510)
+
+[node name="SingleBubble8" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+position = Vector2(-58, 511)
+
+[node name="SingleBubble9" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+position = Vector2(4, 506)
+
+[node name="SingleBubble10" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+position = Vector2(67, 507)
+
+[node name="SingleBubble11" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+position = Vector2(127, 508)
+
+[node name="SingleBubble12" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+position = Vector2(187, 509)
+
+[node name="SingleBubble13" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+position = Vector2(246, 508)
+
+[node name="SingleBubble14" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+position = Vector2(309, 509)
+
+[node name="SingleBubble15" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+position = Vector2(369, 510)
+
+[node name="SingleBubble16" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+position = Vector2(429, 511)
+
+[node name="SingleBubble17" parent="BubblesBottom" instance=ExtResource("2_34xx1")]
+position = Vector2(487, 511)
+
+[node name="BubblesRight" type="Node2D" parent="."]
+rotation = -1.57079
+
+[node name="SingleBubble" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+position = Vector2(-483, 506)
+
+[node name="SingleBubble2" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+position = Vector2(-420, 507)
+
+[node name="SingleBubble3" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+position = Vector2(-360, 508)
+
+[node name="SingleBubble4" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+position = Vector2(-300, 509)
+
+[node name="SingleBubble5" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+position = Vector2(-241, 508)
+
+[node name="SingleBubble6" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+position = Vector2(-178, 509)
+
+[node name="SingleBubble7" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+position = Vector2(-118, 510)
+
+[node name="SingleBubble8" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+position = Vector2(-58, 511)
+
+[node name="SingleBubble9" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+position = Vector2(4, 506)
+
+[node name="SingleBubble10" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+position = Vector2(67, 507)
+
+[node name="SingleBubble11" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+position = Vector2(127, 508)
+
+[node name="SingleBubble12" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+position = Vector2(187, 509)
+
+[node name="SingleBubble13" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+position = Vector2(246, 508)
+
+[node name="SingleBubble14" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+position = Vector2(309, 509)
+
+[node name="SingleBubble15" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+position = Vector2(369, 510)
+
+[node name="SingleBubble16" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+position = Vector2(429, 511)
+
+[node name="SingleBubble17" parent="BubblesRight" instance=ExtResource("2_34xx1")]
+position = Vector2(487, 511)
+
+[node name="BubblesLeft" type="Node2D" parent="."]
+rotation = 1.57079
+
+[node name="SingleBubble" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+position = Vector2(-483, 506)
+
+[node name="SingleBubble2" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+position = Vector2(-420, 507)
+
+[node name="SingleBubble3" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+position = Vector2(-360, 508)
+
+[node name="SingleBubble4" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+position = Vector2(-300, 509)
+
+[node name="SingleBubble5" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+position = Vector2(-241, 508)
+
+[node name="SingleBubble6" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+position = Vector2(-178, 509)
+
+[node name="SingleBubble7" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+position = Vector2(-118, 510)
+
+[node name="SingleBubble8" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+position = Vector2(-58, 511)
+
+[node name="SingleBubble9" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+position = Vector2(4, 506)
+
+[node name="SingleBubble10" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+position = Vector2(67, 507)
+
+[node name="SingleBubble11" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+position = Vector2(127, 508)
+
+[node name="SingleBubble12" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+position = Vector2(187, 509)
+
+[node name="SingleBubble13" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+position = Vector2(246, 508)
+
+[node name="SingleBubble14" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+position = Vector2(309, 509)
+
+[node name="SingleBubble15" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+position = Vector2(369, 510)
+
+[node name="SingleBubble16" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+position = Vector2(429, 511)
+
+[node name="SingleBubble17" parent="BubblesLeft" instance=ExtResource("2_34xx1")]
+position = Vector2(487, 511)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.00095429
+texture = ExtResource("1_flx04")
