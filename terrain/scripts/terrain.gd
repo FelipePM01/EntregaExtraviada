@@ -11,10 +11,13 @@ extends Node2D
 @export var vertices = 10
 var terrain = Array()
 
-const offset=200
-@onready var start_height=offset
+@export var start_offset=200
+@onready var start_height=start_offset
 @onready var start_x=0
 @onready var spawn_polygon_x=Globals.screensize.x/2
+@export var bezier_x_in_out=5
+@export var bezier_max_y_in_out=5
+
 func _ready():
 	randomize()
 	terrain = Array()
@@ -22,12 +25,12 @@ func _ready():
 	terrain.append(Vector2(1, start_y))
 	add_hills()
 	add_hills()
-	
+
 func add_hills():
 	
 	
 	var start_vertex=Vector2(start_x,start_height)
-	var end_vertex=start_vertex+Globals.screensize-Vector2(0,100)
+	var end_vertex=start_vertex+Globals.screensize
 	var vertex_array=Array()
 	for i in range(vertices):
 		randomize()
@@ -35,7 +38,8 @@ func add_hills():
 		
 	var curve=Curve2D.new()
 	for i in vertex_array:
-		curve.add_point(i,Vector2(0,-50),Vector2(0,50))
+		var bezier_y=randf_range(-bezier_max_y_in_out,bezier_max_y_in_out)
+		curve.add_point(i,Vector2(-bezier_x_in_out,bezier_y),Vector2(bezier_x_in_out,-bezier_y))
 	curve.add_point(end_vertex)
 	var points=curve.get_baked_points()
 	$Line2D.points=points

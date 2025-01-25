@@ -9,6 +9,7 @@
 friction = 3.0
 rough = true
 bounce = 0.7
+absorbent = true
 
 [sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_0gnfh"]
 points = PackedVector2Array(20, -30, 30, -20, 30, 20, 20, 30, -20, 30, -30, 20, -30, -20, -20, -30)
