@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://djpfm7nsrchse"
-path="res://.godot/imported/Sea.png-80b066c84a6fd91e9c2f7403ed89d2b9.ctex"
+uid="uid://bsdjm28opcopw"
+path="res://.godot/imported/spre_free_back_1.png-1e12ac7f4adc02ea28757d68c2093497.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://paralax/resources/Cliff/Sea.png"
-dest_files=["res://.godot/imported/Sea.png-80b066c84a6fd91e9c2f7403ed89d2b9.ctex"]
+source_file="res://paralax/resources/free_background/spre_free_back_1.png"
+dest_files=["res://.godot/imported/spre_free_back_1.png-1e12ac7f4adc02ea28757d68c2093497.ctex"]
 
 [params]
 
