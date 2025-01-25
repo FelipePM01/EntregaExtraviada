@@ -1,6 +1,6 @@
 extends Node2D
 @export var playerRigidbody : RigidBody2D
-const forceToPop: float = 1000
+const forceToPop: float = 700
 
 var hasPopped = false
 var IsColliding = false
@@ -16,12 +16,15 @@ func _process(delta: float) -> void:
 	#lastVelocity = playerRigidbody.linear_velocity.length()
 	pass
 
+func _physics_process(delta: float) -> void:
+	lastVelocity = playerRigidbody.linear_velocity
+
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	IsColliding = true
-	print_debug(playerRigidbody.linear_velocity.length())
-	if (playerRigidbody.linear_velocity.length() > forceToPop):
+	if (lastVelocity.length() < forceToPop):
 		return
-	pop_bubble()
+	if (!hasPopped):
+		pop_bubble()
 	timesCollided += 1
 	if (timesCollided > 1 and timesCollided < 3):
 		#Display Player Lost screen and score

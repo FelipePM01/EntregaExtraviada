@@ -8,41 +8,50 @@ extends Node2D
 @export var ground_collision: StaticBody2D
 @export var texture: CompressedTexture2D
 @export var noise: NoiseTexture2D
+@export var vertices = 10
 var terrain = Array()
 
+const offset=200
+@onready var start_height=offset
+@onready var start_x=0
+@onready var spawn_polygon_x=Globals.screensize.x/2
 func _ready():
 	randomize()
 	terrain = Array()
 	var start_y = Globals.screensize.y * 3/4
 	terrain.append(Vector2(1, start_y))
 	add_hills()
+	add_hills()
 	
-func get_point(x:float, height):
-	return hill_sharpness * noise.noise.get_noise_1d(x) + x * tan(hill_angle) + height * sin(2 * PI * x/ hill_width)
-
 func add_hills():
-	var start = terrain[-1]
-	var poly = PackedVector2Array()
-	var hill_slices = hill_width / slices
-	poly.append(Vector2(start.x, start.y+300))
-	poly.append(Vector2(start.x, start.y))
-	var height = randi() % hill_range
-	for j in range(1, slices+1):
-		var hill_point = Vector2()
-		hill_point.x = start.x + j * hill_slices
-		hill_point.y = get_point(hill_point.x, height)
-		$Line2D.add_point(hill_point)
-		terrain.append(hill_point)
-		poly.append(hill_point)
-
-	poly.append(Vector2(terrain[-1].x, terrain[-1].y + 300))
-	var shape = CollisionPolygon2D.new()
-	shape.polygon = poly
+	
+	
+	var start_vertex=Vector2(start_x,start_height)
+	var end_vertex=start_vertex+Globals.screensize-Vector2(0,100)
+	var vertex_array=Array()
+	for i in range(vertices):
+		randomize()
+		vertex_array.append(Vector2(lerp(start_vertex.x,end_vertex.x,float(i)/vertices),lerp(start_vertex.y,end_vertex.y,float(i)/vertices)+randf_range(-100,100)))
+		
+	var curve=Curve2D.new()
+	for i in vertex_array:
+		curve.add_point(i,Vector2(0,-50),Vector2(0,50))
+	curve.add_point(end_vertex)
+	var points=curve.get_baked_points()
+	$Line2D.points=points
+	var poly= PackedVector2Array(points)
+	poly.insert(0,start_vertex+Vector2(0,2000))
+	poly.insert(0,end_vertex+Vector2(0,2000))
+	var shape=CollisionPolygon2D.new()
+	shape.polygon=poly
 	ground_collision.add_child(shape)
+	
 
 	var ground = Polygon2D.new()
 	ground.polygon = poly
 	ground.texture = texture
 	add_child(ground)
-		
-		
+	
+	start_height=end_vertex.y
+	start_x=end_vertex.x
+	spawn_polygon_x+=Globals.screensize.x
