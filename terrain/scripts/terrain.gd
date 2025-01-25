@@ -1,31 +1,21 @@
-extends Node
+extends Node2D
 
 @export var slices = 40
 @export var hill_width = 512
 @export var hill_range = 100
 @export var hill_angle = 10
 @export var hill_sharpness = 20
-@export var player: CharacterBody2D
 @export var ground_collision: StaticBody2D
 @export var texture: CompressedTexture2D
 @export var noise: NoiseTexture2D
-var screensize
 var terrain = Array()
 
 func _ready():
 	randomize()
-	screensize = get_viewport().get_visible_rect().size
 	terrain = Array()
-	var start_y = screensize.y * 3/4 #+ (-hill_range + randi() % hill_range*2)
+	var start_y = Globals.screensize.y * 3/4
 	terrain.append(Vector2(0, start_y))
 	add_hills()
-	while terrain[-1].x < player.position.x + screensize.x / 2:
-		add_hills()
-
-
-func _process(delta):
-	if terrain[-1].x < player.position.x + screensize.x / 2:
-		add_hills()
 	
 func get_point(x:float, height):
 	return hill_sharpness * noise.noise.get_noise_1d(x) + x * tan(hill_angle) + height * sin(2 * PI * x/ hill_width)

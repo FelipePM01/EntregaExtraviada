@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://ba2toixanr5ol"]
+[gd_scene load_steps=5 format=3 uid="uid://ba2toixanr5ol"]
 
 [ext_resource type="Script" path="res://terrain/scripts/terrain.gd" id="1_e8ila"]
 [ext_resource type="Texture2D" uid="uid://ddvvquy2sebku" path="res://terrain/resources/grass.png" id="2_0wtrj"]
-[ext_resource type="PackedScene" uid="uid://cgut2sfp3g8m8" path="res://player/scenes/runner.tscn" id="3_b51mf"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_0h82p"]
 noise_type = 4
@@ -12,17 +11,12 @@ frequency = 0.088
 seamless = true
 noise = SubResource("FastNoiseLite_0h82p")
 
-[node name="Terrain" type="Node" node_paths=PackedStringArray("player", "ground_collision")]
+[node name="Terrain" type="Node2D" node_paths=PackedStringArray("ground_collision")]
 script = ExtResource("1_e8ila")
-player = NodePath("Runner")
 ground_collision = NodePath("GroundCollision")
 texture = ExtResource("2_0wtrj")
 noise = SubResource("NoiseTexture2D_ppkbl")
 
 [node name="GroundCollision" type="StaticBody2D" parent="."]
-
-[node name="Runner" parent="." instance=ExtResource("3_b51mf")]
-position = Vector2(512, 200)
-speed = 400
 
 [node name="Line2D" type="Line2D" parent="."]
