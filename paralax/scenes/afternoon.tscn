@@ -1,9 +1,0 @@
-[gd_scene format=3 uid="uid://ofk54kht2sup"]
-
-[node name="Afternoon" type="Node2D"]
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="Parallax2D" type="Parallax2D" parent="ParallaxBackground/ParallaxLayer"]
