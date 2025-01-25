@@ -3,6 +3,9 @@ extends Node
 @onready var screensize = get_viewport().get_visible_rect().size
 @onready var record:float = 0
 @onready var score: float = 0
+@onready var is_lose: bool = false
+
+signal lose
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

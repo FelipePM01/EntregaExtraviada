@@ -37,8 +37,9 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	timesCollided += 1
 	if (timesCollided > 1 and timesCollided < 3):
 		#Display Player Lost screen and score
-		get_tree().reload_current_scene()
-
+		#get_tree().reload_current_scene()
+		Globals.lose.emit()
+		Globals.is_lose = true
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	IsColliding = false

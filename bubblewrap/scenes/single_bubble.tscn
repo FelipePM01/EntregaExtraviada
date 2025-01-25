@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://7ncsp1ltewid"]
+[gd_scene load_steps=5 format=3 uid="uid://dovxmonfm4dd5"]
 
 [ext_resource type="Script" path="res://bubblewrap/scripts/single_bubble.gd" id="1_08evc"]
 [ext_resource type="Texture2D" uid="uid://db4ixoq8igc4l" path="res://bubblewrap/textures/SingleBubble.png" id="2_te3o4"]
@@ -14,7 +14,7 @@ script = ExtResource("1_08evc")
 texture = ExtResource("2_te3o4")
 
 [node name="Area2D" type="Area2D" parent="."]
-collision_layer = 2
+collision_layer = 0
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]

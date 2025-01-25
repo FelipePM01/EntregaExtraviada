@@ -1,0 +1,82 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1s0thdvyahtt"]
+
+[ext_resource type="Texture2D" uid="uid://ddvvquy2sebku" path="res://terrain/resources/grass.png" id="1_ygur0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_buerj"]
+size = Vector2(829.97, 969)
+
+[node name="Street" type="Node2D"]
+position = Vector2(830.059, 10)
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+offset_left = -830.0
+offset_top = 465.0
+offset_bottom = 512.0
+color = Color(0.241156, 0.241156, 0.241156, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Lines" type="Node2D" parent="."]
+position = Vector2(-789, 207)
+scale = Vector2(1, 0.64)
+
+[node name="ColorRect7" type="ColorRect" parent="Lines"]
+offset_left = 638.0
+offset_top = 434.0
+offset_right = 678.0
+offset_bottom = 474.0
+scale = Vector2(1.88, 0.319999)
+
+[node name="ColorRect8" type="ColorRect" parent="Lines"]
+offset_left = 529.0
+offset_top = 434.0
+offset_right = 569.0
+offset_bottom = 474.0
+scale = Vector2(1.88, 0.319999)
+
+[node name="ColorRect9" type="ColorRect" parent="Lines"]
+offset_left = 418.0
+offset_top = 434.0
+offset_right = 458.0
+offset_bottom = 474.0
+scale = Vector2(1.88, 0.319999)
+
+[node name="ColorRect10" type="ColorRect" parent="Lines"]
+offset_left = 302.0
+offset_top = 434.0
+offset_right = 342.0
+offset_bottom = 474.0
+scale = Vector2(1.88, 0.319999)
+
+[node name="ColorRect11" type="ColorRect" parent="Lines"]
+offset_left = 189.0
+offset_top = 434.0
+offset_right = 229.0
+offset_bottom = 474.0
+scale = Vector2(1.88, 0.319999)
+
+[node name="ColorRect12" type="ColorRect" parent="Lines"]
+offset_left = 81.0
+offset_top = 434.0
+offset_right = 121.0
+offset_bottom = 474.0
+scale = Vector2(1.88, 0.319999)
+
+[node name="ColorRect13" type="ColorRect" parent="Lines"]
+offset_left = -34.0
+offset_top = 434.0
+offset_right = 6.0
+offset_bottom = 474.0
+scale = Vector2(1.88, 0.319999)
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+texture_repeat = 2
+position = Vector2(-423.059, 141)
+texture = ExtResource("1_ygur0")
+polygon = PackedVector2Array(423, 371, 423, 1983, -407, 1983, -406, 371)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-415.074, 949.5)
+shape = SubResource("RectangleShape2D_buerj")

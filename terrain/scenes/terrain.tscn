@@ -20,6 +20,7 @@ texture = ExtResource("2_0wtrj")
 noise = SubResource("NoiseTexture2D_ppkbl")
 
 [node name="GroundCollision" type="StaticBody2D" parent="."]
+collision_layer = 3
 physics_material_override = SubResource("PhysicsMaterial_jvued")
 
 [node name="Line2D" type="Line2D" parent="."]
