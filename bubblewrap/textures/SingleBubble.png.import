@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:bubblewrap/textures/SingleBubble.png.import
-uid="uid://dvsql048hgaso"
+uid="uid://db4ixoq8igc4l"
 path="res://.godot/imported/SingleBubble.png-d97f9e20e640d4aed81aab57e976e476.ctex"
-========
-uid="uid://bsdjm28opcopw"
-path="res://.godot/imported/spre_free_back_1.png-1e12ac7f4adc02ea28757d68c2093497.ctex"
->>>>>>>> 031a4de7b51efb3881555a6dceefcaef1accfb11:paralax/resources/free_background/spre_free_back_1.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:bubblewrap/textures/SingleBubble.png.import
 source_file="res://bubblewrap/textures/SingleBubble.png"
 dest_files=["res://.godot/imported/SingleBubble.png-d97f9e20e640d4aed81aab57e976e476.ctex"]
-========
-source_file="res://paralax/resources/free_background/spre_free_back_1.png"
-dest_files=["res://.godot/imported/spre_free_back_1.png-1e12ac7f4adc02ea28757d68c2093497.ctex"]
->>>>>>>> 031a4de7b51efb3881555a6dceefcaef1accfb11:paralax/resources/free_background/spre_free_back_1.png.import
 
 [params]
 

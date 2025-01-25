@@ -2,26 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<<< HEAD:bubblewrap/textures/Cardboard.png.import
-uid="uid://cx1awdbije0ns"
+uid="uid://c2e56w6jrqpoj"
 path="res://.godot/imported/Cardboard.png-ef77373e5eb655005e3a1dd3df35f8b7.ctex"
-========
-uid="uid://c2477pg400ke5"
-path="res://.godot/imported/spre_free_back_0.png-717b39f2f0e91c3d2b4568a3c8f92b2d.ctex"
->>>>>>>> 031a4de7b51efb3881555a6dceefcaef1accfb11:paralax/resources/free_background/spre_free_back_0.png.import
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-<<<<<<<< HEAD:bubblewrap/textures/Cardboard.png.import
 source_file="res://bubblewrap/textures/Cardboard.png"
 dest_files=["res://.godot/imported/Cardboard.png-ef77373e5eb655005e3a1dd3df35f8b7.ctex"]
-========
-source_file="res://paralax/resources/free_background/spre_free_back_0.png"
-dest_files=["res://.godot/imported/spre_free_back_0.png-717b39f2f0e91c3d2b4568a3c8f92b2d.ctex"]
->>>>>>>> 031a4de7b51efb3881555a6dceefcaef1accfb11:paralax/resources/free_background/spre_free_back_0.png.import
 
 [params]
 

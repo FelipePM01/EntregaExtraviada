@@ -9,4 +9,4 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	var axis_x = Input.get_axis("left", "right")
-	position.x += axis * SPEED * delta
+	position.x += axis_x * SPEED * delta

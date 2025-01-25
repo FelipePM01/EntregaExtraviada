@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://ofk54kht2sup"]
+[gd_scene load_steps=8 format=3 uid="uid://ofk54kht2sup"]
 
-[ext_resource type="Script" path="res://paralax/scripts/camera_2d.gd" id="1_4ybub"]
 [ext_resource type="Texture2D" uid="uid://dq46wr8yb3p5y" path="res://paralax/resources/free_background/spre_free_back_6.png" id="2_fqb18"]
 [ext_resource type="Texture2D" uid="uid://chdqj5bxfhli1" path="res://paralax/resources/free_background/spre_free_back_5.png" id="3_k41mu"]
 [ext_resource type="Texture2D" uid="uid://b3cc1d82kj1xu" path="res://paralax/resources/free_background/spre_free_back_4.png" id="4_pnu5o"]
@@ -10,9 +9,6 @@
 [ext_resource type="Texture2D" uid="uid://c2477pg400ke5" path="res://paralax/resources/free_background/spre_free_back_0.png" id="8_obji4"]
 
 [node name="Cliff" type="Node2D"]
-
-[node name="Camera2D" type="Camera2D" parent="."]
-script = ExtResource("1_4ybub")
 
 [node name="Parallax2D3" type="Parallax2D" parent="."]
 scroll_scale = Vector2(0.1, 0)
