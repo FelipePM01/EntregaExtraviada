@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://c1s0thdvyahtt"]
+[gd_scene load_steps=8 format=3 uid="uid://c1s0thdvyahtt"]
 
 [ext_resource type="Shader" uid="uid://bc7kigyo8als0" path="res://terrain/resources/terrain.tres" id="1_o2py2"]
+[ext_resource type="Gradient" uid="uid://dels2u82bi2qu" path="res://utils/themes/terrain_gradient.tres" id="2_a7m8k"]
 
 [sub_resource type="Gradient" id="Gradient_vlkrj"]
 
@@ -10,14 +11,15 @@ height = 534
 fill_to = Vector2(0, 1)
 repeat = 1
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_gfqwj"]
-shader = ExtResource("1_o2py2")
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buerj"]
 size = Vector2(829.97, 969)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8sfkg"]
 shader = ExtResource("1_o2py2")
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8qpkx"]
+gradient = ExtResource("2_a7m8k")
+fill_to = Vector2(0, 1)
 
 [node name="Street" type="Node2D"]
 position = Vector2(830.059, 10)
@@ -83,18 +85,14 @@ offset_bottom = 474.0
 scale = Vector2(1.88, 0.319999)
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
 texture_repeat = 2
 position = Vector2(-423.059, 141)
 texture = SubResource("GradientTexture2D_kjfaw")
 polygon = PackedVector2Array(423, 371, 423, 1983, -407, 1983, -406, 371)
 
-[node name="Polygon2D2" type="Polygon2D" parent="."]
-texture_repeat = 2
-material = SubResource("ShaderMaterial_gfqwj")
-polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
-internal_vertex_count = 30
-
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
+visible = false
 collision_layer = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
@@ -102,6 +100,7 @@ position = Vector2(-415.074, 949.5)
 shape = SubResource("RectangleShape2D_buerj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 texture_repeat = 2
@@ -113,3 +112,8 @@ offset_right = -625.0
 offset_bottom = -715.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+texture = SubResource("GradientTexture2D_8qpkx")
+polygon = PackedVector2Array(10.941, 5, 65.941, 36, 127.941, 11, 178.941, 33, 175.941, 229, 0.940979, 221)
+uv = PackedVector2Array(10.941, 5, 65.941, 36, 127.941, 11, 178.941, 33, 175.941, 229, 0.940979, 221)

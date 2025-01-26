@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var ground_collision: StaticBody2D
-@export var texture: CompressedTexture2D
+@export var texture: GradientTexture2D
 @export var noise: NoiseTexture2D
 @export var vertices = 10
 
@@ -53,10 +53,17 @@ func add_hills():
 	curve.add_point(end_vertex)
 	var points = curve.get_baked_points()
 	$Line2D.points += points
-	var poly= PackedVector2Array(points)
+	var poly = PackedVector2Array(points)
+	var uv = PackedVector2Array(points)
+	for i in range(len(points)):
+		uv[i].y = 0
+
 	poly.insert(0,start_vertex)
+	uv.insert(0,Vector2.ZERO)
 	poly.insert(0,start_vertex+Vector2(0,2000))
+	uv.insert(0,Vector2(start_vertex.x,64))
 	poly.insert(0,end_vertex+Vector2(0,2000))
+	uv.insert(0,Vector2(end_vertex.x,64))
 	var shape=CollisionPolygon2D.new()
 	shape.polygon=poly
 	ground_collision.add_child(shape)
@@ -64,6 +71,7 @@ func add_hills():
 
 	var ground = Polygon2D.new()
 	ground.polygon = poly
+	ground.uv = uv
 	ground.texture = texture
 	ground.texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
 	add_child(ground)
