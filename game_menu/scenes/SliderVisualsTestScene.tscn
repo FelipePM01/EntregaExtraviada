@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1dsy6emfxudh"]
+
+[ext_resource type="Texture2D" uid="uid://12l7aueb6tg2" path="res://game_menu/textures/SliderButton.png" id="1_xwhtd"]
+[ext_resource type="Texture2D" uid="uid://dnlcfvxtgvg8e" path="res://game_menu/textures/SliderButtonHighlight.png" id="2_nqj24"]
+
+[node name="SliderVisualsTestScene" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 1.0
+offset_right = 296.0
+offset_bottom = 65.0
+theme_override_icons/grabber = ExtResource("1_xwhtd")
+theme_override_icons/grabber_highlight = ExtResource("2_nqj24")
+value = 100.0

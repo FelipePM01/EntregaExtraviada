@@ -1,0 +1,44 @@
+[gd_scene load_steps=6 format=3 uid="uid://buifhifk07fjv"]
+
+[ext_resource type="Script" path="res://player_ui/scripts/music_controller.gd" id="1_55foq"]
+[ext_resource type="Texture2D" uid="uid://12l7aueb6tg2" path="res://game_menu/textures/SliderButton.png" id="2_2y07n"]
+[ext_resource type="Texture2D" uid="uid://bef4bjfdx8aw" path="res://game_menu/textures/speakerOff.png" id="3_2oywp"]
+[ext_resource type="Texture2D" uid="uid://dnlcfvxtgvg8e" path="res://game_menu/textures/SliderButtonHighlight.png" id="3_ibfgc"]
+[ext_resource type="Texture2D" uid="uid://y43xg8g0o47g" path="res://game_menu/textures/speakerOn.png" id="4_hc2fb"]
+
+[node name="MusicController" type="CanvasLayer"]
+script = ExtResource("1_55foq")
+audioOnSprite = ExtResource("4_hc2fb")
+audioOffSprite = ExtResource("3_2oywp")
+
+[node name="HSlider" type="HSlider" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -203.0
+offset_top = 23.0
+offset_right = -26.0
+offset_bottom = 47.0
+grow_horizontal = 0
+theme_override_icons/grabber = ExtResource("2_2y07n")
+theme_override_icons/grabber_highlight = ExtResource("3_ibfgc")
+min_value = -30.0
+max_value = 0.0
+rounded = true
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -273.0
+offset_top = 2.0
+offset_right = -145.0
+offset_bottom = 130.0
+grow_horizontal = 0
+scale = Vector2(0.481625, 0.512291)
+
+[node name="TextureRect" type="TextureRect" parent="BoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_hc2fb")
+
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
