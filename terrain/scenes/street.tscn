@@ -1,9 +1,23 @@
-[gd_scene load_steps=3 format=3 uid="uid://c1s0thdvyahtt"]
+[gd_scene load_steps=7 format=3 uid="uid://c1s0thdvyahtt"]
 
-[ext_resource type="Texture2D" uid="uid://ddvvquy2sebku" path="res://terrain/resources/grass.png" id="1_ygur0"]
+[ext_resource type="Shader" uid="uid://bc7kigyo8als0" path="res://terrain/resources/terrain.tres" id="1_o2py2"]
+
+[sub_resource type="Gradient" id="Gradient_vlkrj"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_kjfaw"]
+gradient = SubResource("Gradient_vlkrj")
+height = 534
+fill_to = Vector2(0, 1)
+repeat = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gfqwj"]
+shader = ExtResource("1_o2py2")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_buerj"]
 size = Vector2(829.97, 969)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8sfkg"]
+shader = ExtResource("1_o2py2")
 
 [node name="Street" type="Node2D"]
 position = Vector2(830.059, 10)
@@ -71,8 +85,14 @@ scale = Vector2(1.88, 0.319999)
 [node name="Polygon2D" type="Polygon2D" parent="."]
 texture_repeat = 2
 position = Vector2(-423.059, 141)
-texture = ExtResource("1_ygur0")
+texture = SubResource("GradientTexture2D_kjfaw")
 polygon = PackedVector2Array(423, 371, 423, 1983, -407, 1983, -406, 371)
+
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_gfqwj")
+polygon = PackedVector2Array(0, 0, 100, 0, 100, 100, 0, 100)
+internal_vertex_count = 30
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 collision_layer = 2
@@ -80,3 +100,16 @@ collision_layer = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-415.074, 949.5)
 shape = SubResource("RectangleShape2D_buerj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+texture_repeat = 2
+material = SubResource("ShaderMaterial_8sfkg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -625.0
+offset_bottom = -715.0
+grow_horizontal = 2
+grow_vertical = 2
