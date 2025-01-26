@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://buifhifk07fjv"]
+[gd_scene load_steps=6 format=3 uid="uid://c5e6ht2afodyx"]
 
 [ext_resource type="Script" path="res://player_ui/scripts/music_controller.gd" id="1_55foq"]
 [ext_resource type="Texture2D" uid="uid://12l7aueb6tg2" path="res://game_menu/textures/SliderButton.png" id="2_2y07n"]
