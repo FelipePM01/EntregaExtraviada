@@ -29,7 +29,7 @@ position = Vector2(736.059, 540)
 gravity_scale = 0.0
 
 [node name="Terrain" parent="." instance=ExtResource("4_y10el")]
-position = Vector2(830, 616)
+position = Vector2(830, 639)
 hill_angle = 37.215
 hill_spike = 82.5
 

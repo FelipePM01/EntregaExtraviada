@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://ba2toixanr5ol"]
+[gd_scene load_steps=8 format=3 uid="uid://ba2toixanr5ol"]
 
 [ext_resource type="Script" path="res://terrain/scripts/terrain.gd" id="1_e8ila"]
 [ext_resource type="Gradient" uid="uid://dels2u82bi2qu" path="res://utils/themes/terrain_gradient.tres" id="2_dsq38"]
+[ext_resource type="Material" uid="uid://bioqa2cs5yhht" path="res://terrain/resources/shader.tres" id="3_jytdr"]
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_frlgj"]
 gradient = ExtResource("2_dsq38")
 fill_to = Vector2(0, 1)
+repeat = 2
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_0h82p"]
 noise_type = 4
@@ -21,6 +23,7 @@ noise = SubResource("FastNoiseLite_0h82p")
 script = ExtResource("1_e8ila")
 ground_collision = NodePath("GroundCollision")
 texture = SubResource("GradientTexture2D_frlgj")
+shaders = ExtResource("3_jytdr")
 noise = SubResource("NoiseTexture2D_ppkbl")
 
 [node name="GroundCollision" type="StaticBody2D" parent="."]

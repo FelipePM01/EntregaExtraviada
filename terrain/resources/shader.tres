@@ -1,0 +1,6 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://bioqa2cs5yhht"]
+
+[ext_resource type="Shader" uid="uid://bc7kigyo8als0" path="res://terrain/resources/terrain.tres" id="1_2lusw"]
+
+[resource]
+shader = ExtResource("1_2lusw")

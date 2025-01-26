@@ -2,6 +2,8 @@ extends Node2D
 
 @export var ground_collision: StaticBody2D
 @export var texture: GradientTexture2D
+@export var shaders: ShaderMaterial
+
 @export var noise: NoiseTexture2D
 @export var vertices = 10
 
@@ -37,7 +39,6 @@ func add_hills():
 	var curve=Curve2D.new()
 	for i in vertex_array:
 		var smoothness = randf_range(bezier_min_smoothness, bezier_max_smoothness)
-		print(smoothness)
 		curve.add_point(i,Vector2(-smoothness * cos(hill_angle_rad), -smoothness * sin(hill_angle_rad)),
 						  Vector2(smoothness * cos(hill_angle_rad), smoothness * sin(hill_angle_rad)))
 		var p = point_marker.instantiate()
@@ -56,14 +57,15 @@ func add_hills():
 	var poly = PackedVector2Array(points)
 	var uv = PackedVector2Array(points)
 	for i in range(len(points)):
-		uv[i].y = 0
+		uv[i] = Vector2(lerp(0, 64, int(uv[i].x) % int(Globals.screensize.x)/ Globals.screensize.x), 0)
+	uv[-1] = Vector2(64, 0)
 
 	poly.insert(0,start_vertex)
-	uv.insert(0,Vector2.ZERO)
+	uv.insert(0,Vector2(0, 0))
 	poly.insert(0,start_vertex+Vector2(0,2000))
-	uv.insert(0,Vector2(start_vertex.x,64))
+	uv.insert(0,Vector2(0, 64))
 	poly.insert(0,end_vertex+Vector2(0,2000))
-	uv.insert(0,Vector2(end_vertex.x,64))
+	uv.insert(0,Vector2(64,64))
 	var shape=CollisionPolygon2D.new()
 	shape.polygon=poly
 	ground_collision.add_child(shape)
@@ -73,6 +75,7 @@ func add_hills():
 	ground.polygon = poly
 	ground.uv = uv
 	ground.texture = texture
+	ground.material = shaders
 	ground.texture_repeat = CanvasItem.TEXTURE_REPEAT_ENABLED
 	add_child(ground)
 	
