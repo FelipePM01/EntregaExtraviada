@@ -84,4 +84,5 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_xvn3h")
 
+[connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
 [connection signal="pressed" from="Panel/VBoxContainer/MarginContainer2/RestartButton" to="." method="_on_restart_button_pressed"]

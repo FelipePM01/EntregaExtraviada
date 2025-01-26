@@ -7,7 +7,7 @@ const GRAVITY=100
 @onready var music = $Music
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	Globals.before_reload.connect(save_music_progress)
+	Globals.before_reload.connect(save_progress)
 	music.play(Globals.music_progress)
 	
 func _input(event: InputEvent) -> void:
@@ -28,10 +28,23 @@ func _process(delta: float) -> void:
 			$VignetteEffect.expand_vignette(0.5)
 		else:
 			$VignetteEffect.shrink_vignette(0.2)
-		Globals.score = position.x / 100
+		Globals.score = int(position.x / 100)
 	else:
 		$VignetteEffect.clear_vignette()
 
-func save_music_progress():
+func save_progress():
+	var save_file = FileAccess.open("user://highscore", FileAccess.READ)
+	if save_file==null:
+		save_file=FileAccess.open("user://highscore", FileAccess.WRITE)
+		save_file.store_64(int(Globals.score))
+		save_file.close()
+	var highscore=save_file.get_64()
+	save_file.close()
+	if highscore<Globals.score:
+		highscore=Globals.score
+		save_file = FileAccess.open("user://highscore", FileAccess.WRITE)
+		save_file.seek(0)
+		save_file.store_64(highscore)
+	save_file.close()
 	Globals.music_progress = music.get_playback_position()
 	pass

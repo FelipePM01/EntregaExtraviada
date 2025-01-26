@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ba2toixanr5ol"]
 
 [ext_resource type="Script" path="res://terrain/scripts/terrain.gd" id="1_e8ila"]
-[ext_resource type="Texture2D" uid="uid://ddvvquy2sebku" path="res://terrain/resources/grass.png" id="2_0wtrj"]
+[ext_resource type="Texture2D" uid="uid://ddvvquy2sebku" path="res://old_terrain/resources/grass.png" id="2_0wtrj"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_0h82p"]
 noise_type = 4

@@ -3,6 +3,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_e5o0w"]
 line_spacing = 3.03
 font_size = 61
+font_color = Color(0.404511, 0.404511, 0.404511, 1)
 
 [node name="Menu" type="CanvasLayer"]
 
