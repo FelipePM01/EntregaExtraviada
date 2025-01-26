@@ -11,7 +11,7 @@ point_count = 2
 curve = SubResource("Curve_7inak")
 
 [sub_resource type="Curve" id="Curve_fw7a6"]
-_data = [Vector2(0.00873362, 0.10989), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+_data = [Vector2(0, 0.472527), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="CurveTexture" id="CurveTexture_sgeic"]
@@ -24,16 +24,19 @@ initial_velocity_min = 1.0
 initial_velocity_max = 2.0
 gravity = Vector3(0, 10, 0)
 scale_min = 0.1
-scale_max = 0.7
+scale_max = 0.3
 scale_curve = SubResource("CurveTexture_sgeic")
 alpha_curve = SubResource("CurveTexture_aglwp")
 
 [node name="DirtEffect" type="GPUParticles2D"]
+z_index = 1
+z_as_relative = false
 emitting = false
 amount = 1
 process_material = SubResource("ParticleProcessMaterial_caqv7")
 texture = ExtResource("1_frfhm")
 lifetime = 4.0
-one_shot = true
-speed_scale = 2.0
+speed_scale = 4.0
 script = ExtResource("2_1ug25")
+
+[connection signal="finished" from="." to="." method="_on_finished"]
