@@ -324,6 +324,7 @@ texture = ExtResource("3_2j5tt")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, -1)
 shape = SubResource("ConvexPolygonShape2D_0gnfh")
+
 [node name="VignetteEffect" parent="." instance=ExtResource("5_1ugqm")]
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
