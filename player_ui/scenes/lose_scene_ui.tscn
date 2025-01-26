@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://bshkt4wfgo8kn"]
+[gd_scene load_steps=9 format=3 uid="uid://bshkt4wfgo8kn"]
 
 [ext_resource type="Script" path="res://player_ui/scripts/lost_scene_ui.gd" id="1_n51eg"]
 [ext_resource type="Theme" uid="uid://cao5scx3g0f1n" path="res://utils/themes/main_theme.tres" id="2_oh4tf"]
 [ext_resource type="Texture2D" uid="uid://c5qd6pbrk86pr" path="res://utils/themes/letter.png" id="3_yi5ep"]
+[ext_resource type="AudioStream" uid="uid://c51ggi1li18c7" path="res://box/audio/box_breaking.wav" id="4_qsxu7"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_k2sju"]
 texture = ExtResource("3_yi5ep")
@@ -45,14 +46,19 @@ alignment = 1
 
 [node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer"]
 layout_mode = 2
+size_flags_stretch_ratio = 6.43
 theme_override_constants/margin_top = 15
 theme_override_constants/margin_bottom = 30
 
 [node name="HighscoreText" type="Label" parent="Panel/VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 26
-text = "Highscore: 
-0m"
+text = "
+
+Top distance:
+0m
+Highscore:
+0"
 horizontal_alignment = 1
 
 [node name="GameOverText" type="Label" parent="Panel/VBoxContainer"]
@@ -85,4 +91,8 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_xvn3h")
 
 [connection signal="visibility_changed" from="." to="." method="_on_visibility_changed"]
+[node name="BoxBreaking" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_qsxu7")
+volume_db = -10.0
+
 [connection signal="pressed" from="Panel/VBoxContainer/MarginContainer2/RestartButton" to="." method="_on_restart_button_pressed"]

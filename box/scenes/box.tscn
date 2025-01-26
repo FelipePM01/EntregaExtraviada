@@ -1,6 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://dt6cak775tec0"]
 
 [ext_resource type="Script" path="res://box/scripts/box.gd" id="1_dd22b"]
+[ext_resource type="AudioStream" uid="uid://gqqon5b2p33n" path="res://box/audio/box_falling.mp3" id="2_ewb4v"]
 [ext_resource type="PackedScene" uid="uid://dovxmonfm4dd5" path="res://bubblewrap/scenes/single_bubble.tscn" id="2_j2l00"]
 [ext_resource type="Script" path="res://bubblewrap/scripts/line_wrap.gd" id="2_q1dxb"]
 [ext_resource type="Texture2D" uid="uid://c2e56w6jrqpoj" path="res://bubblewrap/textures/Cardboard.png" id="3_2j5tt"]
@@ -21,6 +22,7 @@ points = PackedVector2Array(20, -30, 30, -20, 30, 20, 20, 30, -20, 30, -30, 20, 
 physics_material_override = SubResource("PhysicsMaterial_clopl")
 angular_damp = 5.0
 script = ExtResource("1_dd22b")
+box_falling = ExtResource("2_ewb4v")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
@@ -324,8 +326,9 @@ position = Vector2(1, -1)
 shape = SubResource("ConvexPolygonShape2D_0gnfh")
 
 [node name="DirtEffect" parent="." instance=ExtResource("7_bdgya")]
-
 [node name="VignetteEffect" parent="." instance=ExtResource("5_1ugqm")]
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_xik8m")
+
+[node name="BoxAudio" type="AudioStreamPlayer2D" parent="."]

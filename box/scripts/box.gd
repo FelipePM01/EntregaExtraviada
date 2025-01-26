@@ -2,6 +2,11 @@ extends RigidBody2D
 
 const TORQUE=30000
 const GRAVITY=100
+
+@export var box_falling : AudioStream
+
+@onready var dirt_effect = preload("res://box/effects/scenes/DirtParticle.tscn")
+
 @onready var velocity=Vector2(100,0)
 @onready var camera=$Camera2D
 @onready var music = $Music
@@ -48,3 +53,11 @@ func save_progress():
 	save_file.close()
 	Globals.music_progress = music.get_playback_position()
 	pass
+		
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	if (linear_velocity.length() >= SingleBubble.forceToPop/1.5 and state.get_contact_count() > 0):
+		var dirt_effect_instance = dirt_effect.instantiate()
+		add_child(dirt_effect_instance)
+		$BoxAudio.stream = box_falling
+		$BoxAudio.play()
+		

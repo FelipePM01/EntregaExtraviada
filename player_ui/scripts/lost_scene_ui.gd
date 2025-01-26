@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 @export var score_text: Label
-
+var first_time_visible
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace wi
@@ -9,9 +9,12 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
-	
+	score_text.text = "\nTop distance:\n{0}m\nHighscore:\n{1}".format([int(Globals.score), int((Globals.score*pow(Globals.elapsedTime, -.2))*10),"{}"])
+	if (visible and !first_time_visible):
+		$BoxBreaking.play()
+		first_time_visible = true
 	if (Input.is_action_pressed("Spacebar") and visible):
+		Globals.elapsedTime = 0
 		_on_restart_button_pressed()
 
 

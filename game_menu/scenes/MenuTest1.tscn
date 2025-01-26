@@ -1,9 +1,91 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmno7rmf2n6l8"]
+[gd_scene load_steps=6 format=3 uid="uid://bmno7rmf2n6l8"]
+
+[ext_resource type="Script" path="res://game_menu/menu_animation_play.gd" id="1_57kei"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_e5o0w"]
 line_spacing = 3.03
 font_size = 61
 font_color = Color(0.404511, 0.404511, 0.404511, 1)
+
+[sub_resource type="Animation" id="Animation_5ltif"]
+resource_name = "Bob"
+length = 5.0
+loop_mode = 1
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(662.5, -0.25, 0, 0.25, 0, 665, -0.25, 0, 0.25, 0, 661, -0.25, 0, 0.25, 0, 665, -0.25, 0, 0.25, 0, 663, -0.25, 0, 0.25, 0, 662.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(500, -0.25, 0, 0.25, 0, 484, -0.25, 0, 0.25, 0, 502, -0.25, 0, 0.25, 0, 490, -0.25, 0, 0.25, 0, 504, -0.25, 0, 0.25, 0, 500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1, 2, 3, 4, 5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.0506145, -0.25, 0, 0.25, 0, 0.0506145, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.5, 3.5, 5)
+}
+
+[sub_resource type="Animation" id="Animation_wk32y"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(662.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(500, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3d1mn"]
+_data = {
+"Bob": SubResource("Animation_5ltif"),
+"RESET": SubResource("Animation_wk32y")
+}
 
 [node name="Menu" type="CanvasLayer"]
 
@@ -13,11 +95,18 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -297.5
-offset_top = -40.0
-offset_right = 297.5
-offset_bottom = 40.0
+offset_left = -297.494
+offset_top = -39.9995
+offset_right = 297.506
+offset_bottom = 40.0005
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset = Vector2(298.375, 42.9)
 text = "Press space to start"
 label_settings = SubResource("LabelSettings_e5o0w")
+script = ExtResource("1_57kei")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Label"]
+libraries = {
+"": SubResource("AnimationLibrary_3d1mn")
+}

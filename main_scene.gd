@@ -13,6 +13,7 @@ func _process(delta):
 		terrain.add_hills()
 		
 	if (Input.is_action_pressed("Spacebar") and menu.visible and not Globals.is_lose):
+		Globals.started_game = true
 		$Truck/BangSound.play()
 		player.gravity_scale = 1
 		player.apply_impulse(Vector2(600, -30))

@@ -5,6 +5,9 @@ extends Node
 @onready var score: float = 0
 @onready var is_lose: bool = false
 
+var started_game: bool = false
+var elapsedTime: float = 0.0
+
 #Keep music progress for reload
 #I'm playing it at the Box script
 var music_progress = 0.0	
@@ -20,4 +23,5 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	pass
+	if (started_game&&!is_lose):
+		elapsedTime += delta
