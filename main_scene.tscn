@@ -11,7 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://rpoykyouhg2x" path="res://game_menu/textures/Truck.png" id="6_mxdbv"]
 [ext_resource type="AudioStream" uid="uid://be1feu4pclbxd" path="res://game_menu/audio/Bang.mp3" id="8_0xbmu"]
 [ext_resource type="AudioStream" uid="uid://dr5ufmytouab5" path="res://game_menu/audio/StationaryMotor.mp3" id="9_hevmr"]
-[ext_resource type="PackedScene" uid="uid://e7hgem655kjc" path="res://player_ui/scenes/music_controller.tscn" id="12_djpj5"]
+[ext_resource type="PackedScene" uid="uid://buifhifk07fjv" path="res://player_ui/scenes/music_controller.tscn" id="12_djpj5"]
 
 [node name="MainScene" type="Node2D" node_paths=PackedStringArray("player", "terrain", "menu", "lose_scene", "score_ui")]
 script = ExtResource("1_8bsnl")

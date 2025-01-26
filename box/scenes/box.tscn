@@ -325,8 +325,14 @@ position = Vector2(1, -1)
 shape = SubResource("ConvexPolygonShape2D_0gnfh")
 
 [node name="DirtEffect" parent="." instance=ExtResource("7_bdgya")]
+z_index = 1
+z_as_relative = false
+one_shot = false
+speed_scale = 4.0
 
 [node name="VignetteEffect" parent="." instance=ExtResource("5_1ugqm")]
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_xik8m")
+
+[connection signal="finished" from="DirtEffect" to="DirtEffect" method="_on_finished"]
