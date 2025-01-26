@@ -11,9 +11,9 @@ func _ready() -> void:
 	music.play(Globals.music_progress)
 	
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed('scroll_up'):
+	if event.is_action_pressed('scroll_up') and camera.zoom.x>1.2:
 		camera.zoom -= Vector2(0.2, 0.2)
-	if event.is_action_pressed('scroll_down'):
+	if event.is_action_pressed('scroll_down')  and camera.zoom.x<3:
 		camera.zoom += Vector2(0.2, 0.2)
 
 

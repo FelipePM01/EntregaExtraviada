@@ -73,8 +73,16 @@ theme_override_constants/margin_bottom = 0
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 8
+theme_override_colors/font_disabled_color = Color(0.321728, 0.321728, 0.321728, 1)
+theme_override_colors/font_hover_pressed_color = Color(0.321569, 0.321569, 0.321569, 1)
+theme_override_colors/font_hover_color = Color(0.321569, 0.321569, 0.321569, 1)
+theme_override_colors/font_pressed_color = Color(0.321569, 0.321569, 0.321569, 1)
+theme_override_colors/font_focus_color = Color(0.321569, 0.321569, 0.321569, 1)
+theme_override_colors/font_color = Color(0.321569, 0.321569, 0.321569, 1)
+theme_override_colors/font_outline_color = Color(0.321569, 0.321569, 0.321569, 1)
 theme_override_font_sizes/font_size = 26
 text = "Press space to restart"
+flat = true
 
 [node name="Panel2" type="Panel" parent="."]
 anchors_preset = 15

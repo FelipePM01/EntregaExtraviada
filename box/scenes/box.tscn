@@ -23,6 +23,7 @@ angular_damp = 5.0
 script = ExtResource("1_dd22b")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.7, 1.7)
 
 [node name="BubblesTop" type="Node2D" parent="."]
 scale = Vector2(0.059, 0.059)
