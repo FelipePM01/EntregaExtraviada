@@ -5,6 +5,12 @@ extends Node
 @onready var score: float = 0
 @onready var is_lose: bool = false
 
+#Keep music progress for reload
+#I'm playing it at the Box script
+var music_progress = 0.0	
+
+signal before_reload
+
 signal lose
 
 # Called when the node enters the scene tree for the first time.

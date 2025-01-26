@@ -4,8 +4,11 @@ const TORQUE=30000
 const GRAVITY=100
 @onready var velocity=Vector2(100,0)
 @onready var camera=$Camera2D
+@onready var music = $Music
 # Called when the node enters the scene tree for the first time.
-
+func _ready() -> void:
+	Globals.before_reload.connect(save_music_progress)
+	music.play(Globals.music_progress)
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed('scroll_up'):
@@ -28,3 +31,7 @@ func _process(delta: float) -> void:
 		Globals.score = position.x / 100
 	else:
 		$VignetteEffect.clear_vignette()
+
+func save_music_progress():
+	Globals.music_progress = music.get_playback_position()
+	pass

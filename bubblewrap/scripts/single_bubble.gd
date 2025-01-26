@@ -1,8 +1,6 @@
 extends Node2D
 class_name SingleBubble
 
-signal bubble_popped(SingleBubble)
-
 @onready var cooldownTimer: Timer = $CooldownTimer
 var isCooldown = false
 
@@ -52,7 +50,6 @@ func pop_bubble():
 	$AudioStreamPlayer2D.play()
 	$Line2D.visible = true
 	$Sprite2D.visible = false
-	emit_signal("bubble_popped",self)
 	start_cooldown()
 
 func start_cooldown():

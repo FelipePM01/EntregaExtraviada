@@ -1,0 +1,39 @@
+[gd_scene load_steps=8 format=3 uid="uid://wymy16ruy3q5"]
+
+[ext_resource type="Texture2D" uid="uid://b5vs8c55rirm3" path="res://box/effects/resources/smoke_07_brown.png" id="1_frfhm"]
+[ext_resource type="Script" path="res://box/effects/scripts/dirt_particle.gd" id="2_1ug25"]
+
+[sub_resource type="Curve" id="Curve_7inak"]
+_data = [Vector2(0.00873362, 1), 0.0, 1.4, 0, 0, Vector2(0.9869, 0.043956), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_aglwp"]
+curve = SubResource("Curve_7inak")
+
+[sub_resource type="Curve" id="Curve_fw7a6"]
+_data = [Vector2(0.00873362, 0.10989), 0.0, 1.4, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_sgeic"]
+curve = SubResource("Curve_fw7a6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_caqv7"]
+particle_flag_disable_z = true
+spread = 180.0
+initial_velocity_min = 1.0
+initial_velocity_max = 2.0
+gravity = Vector3(0, 10, 0)
+scale_min = 0.1
+scale_max = 0.7
+scale_curve = SubResource("CurveTexture_sgeic")
+alpha_curve = SubResource("CurveTexture_aglwp")
+
+[node name="DirtEffect" type="GPUParticles2D"]
+emitting = false
+amount = 1
+process_material = SubResource("ParticleProcessMaterial_caqv7")
+texture = ExtResource("1_frfhm")
+lifetime = 4.0
+one_shot = true
+speed_scale = 2.0
+script = ExtResource("2_1ug25")
