@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://e7hgem655kjc"]
+
+[ext_resource type="Script" path="res://player_ui/scripts/music_controller.gd" id="1_55foq"]
+
+[node name="MusicController" type="CanvasLayer"]
+script = ExtResource("1_55foq")
+
+[node name="HSlider" type="HSlider" parent="."]
+offset_left = 1721.0
+offset_top = 16.0
+offset_right = 1898.0
+offset_bottom = 36.0
+min_value = -30.0
+max_value = 0.0
+rounded = true
+
+[connection signal="value_changed" from="HSlider" to="." method="_on_h_slider_value_changed"]
