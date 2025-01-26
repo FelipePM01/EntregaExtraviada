@@ -2,6 +2,13 @@ extends RigidBody2D
 
 const TORQUE=30000
 const GRAVITY=100
+
+@export var dirt_effect_cooldown: float
+
+@onready var dirt_effect = preload("res://box/effects/scenes/DirtParticle.tscn")
+@onready var dirtCooldownTimer: Timer = $DirtEffectTimer
+var dirtCooldown = false
+
 @onready var velocity=Vector2(100,0)
 @onready var camera=$Camera2D
 @onready var music = $Music
@@ -35,3 +42,15 @@ func _process(delta: float) -> void:
 func save_music_progress():
 	Globals.music_progress = music.get_playback_position()
 	pass
+		
+func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
+	if (linear_velocity.length() >= SingleBubble.forceToPop/2 and state.get_contact_count() > 0):
+		var dirt_effect_instance = dirt_effect.instantiate()
+		add_child(dirt_effect_instance)
+		dirtCooldownTimer.start()
+		dirtCooldown = true
+		print_debug("Instantiating Dirt")
+
+
+func _on_dirt_effect_timer_timeout() -> void:
+	dirtCooldown = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dt6cak775tec0"]
+[gd_scene load_steps=9 format=3 uid="uid://dt6cak775tec0"]
 
 [ext_resource type="Script" path="res://box/scripts/box.gd" id="1_dd22b"]
 [ext_resource type="PackedScene" uid="uid://dovxmonfm4dd5" path="res://bubblewrap/scenes/single_bubble.tscn" id="2_j2l00"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://c2e56w6jrqpoj" path="res://bubblewrap/textures/Cardboard.png" id="3_2j5tt"]
 [ext_resource type="PackedScene" uid="uid://ieetl00chlny" path="res://postprocessing/shaders/vignette/scenes/vignette_effect.tscn" id="5_1ugqm"]
 [ext_resource type="AudioStream" uid="uid://vha5uwij3d0p" path="res://game_menu/audio/MusicSeamless.wav" id="6_xik8m"]
-[ext_resource type="PackedScene" uid="uid://wymy16ruy3q5" path="res://box/effects/scenes/DirtParticle.tscn" id="7_bdgya"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_clopl"]
 friction = 3.0
@@ -19,6 +18,8 @@ points = PackedVector2Array(20, -30, 30, -20, 30, 20, 20, 30, -20, 30, -30, 20, 
 
 [node name="Box" type="RigidBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_clopl")
+contact_monitor = true
+max_contacts_reported = 1
 angular_damp = 5.0
 script = ExtResource("1_dd22b")
 
@@ -323,9 +324,12 @@ texture = ExtResource("3_2j5tt")
 position = Vector2(1, -1)
 shape = SubResource("ConvexPolygonShape2D_0gnfh")
 
-[node name="DirtEffect" parent="." instance=ExtResource("7_bdgya")]
-
 [node name="VignetteEffect" parent="." instance=ExtResource("5_1ugqm")]
 
 [node name="Music" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_xik8m")
+
+[node name="DirtEffectTimer" type="Timer" parent="."]
+wait_time = 0.401
+
+[connection signal="timeout" from="DirtEffectTimer" to="." method="_on_dirt_effect_timer_timeout"]
